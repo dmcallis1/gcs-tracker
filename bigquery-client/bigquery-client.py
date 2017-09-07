@@ -27,7 +27,7 @@ SELECT
   NTH(50, quantiles(reqFont))    FONT_reqs_med,
   NTH(50, quantiles(numDomains))    DOMAINS_med,
   NTH(50, quantiles(numDomElements))    DOM_ELEMS_med,
-FROM [httparchive:runs.2017_07_01_pages]
+FROM [httparchive:runs.2017_08_01_pages_mobile]
 WHERE rank <= 1000
 """)
 
@@ -39,3 +39,4 @@ rows = query.fetch_data()
 for row in rows:
     # Convert tuple to list and print
     print (row)
+    print (type(row))
